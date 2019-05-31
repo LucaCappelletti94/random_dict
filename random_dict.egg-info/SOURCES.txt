@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+setup.py
+random_dict/__init__.py
+random_dict/__version__.py
+random_dict/random_dict.py
+random_dict.egg-info/PKG-INFO
+random_dict.egg-info/SOURCES.txt
+random_dict.egg-info/dependency_links.txt
+random_dict.egg-info/requires.txt
+random_dict.egg-info/top_level.txt

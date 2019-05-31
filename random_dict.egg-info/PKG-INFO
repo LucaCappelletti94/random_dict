@@ -1,0 +1,107 @@
+Metadata-Version: 2.1
+Name: random-dict
+Version: 1.0.0
+Summary: Simple python package to generate random dictionaries of given types.
+Home-page: https://github.com/LucaCappelletti94/random_dict
+Author: Luca Cappelletti
+Author-email: cappelletti.luca94@gmail.com
+License: MIT
+Description: random_dict
+        =========================================================================================
+        |travis| |sonar_quality| |sonar_maintainability| |sonar_coverage| |coveralls_coverage| |pip|
+        
+        Simple python package to generate random dictionaries of given types.
+        
+        How do I install this package?
+        ----------------------------------------------
+        As usual, just download it using pip:
+        
+        .. code:: shell
+        
+            pip install random_dict
+        
+        Usage examples
+        ----------------------------------------------
+        
+        random_string_dict
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        This function will generate a dictionary with given at most `max_depth` and `max_height` of type `string`.
+        
+        .. code:: python
+        
+            from random_dict import random_string_dict
+            from random import randint
+        
+            random_string_dict(randint(1, 10), randint(1, 10))
+        
+        random_bool_dict
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        This function will generate a dictionary with given at most `max_depth` and `max_height` of type `bool`.
+        
+        .. code:: python
+        
+            from random_dict import random_bool_dict
+            from random import randint
+        
+            random_bool_dict(randint(1, 10), randint(1, 10))
+        
+        random_float_dict
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        This function will generate a dictionary with given at most `max_depth` and `max_height` of type `float`.
+        
+        .. code:: python
+        
+            from random_dict import random_float_dict
+            from random import randint
+        
+            random_float_dict(randint(1, 10), randint(1, 10))
+        
+        random_int_dict
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        This function will generate a dictionary with given at most `max_depth` and `max_height` of type `int`.
+        
+        .. code:: python
+        
+            from random_dict import random_int_dict
+            from random import randint
+        
+            random_int_dict(randint(1, 10), randint(1, 10))
+        
+        random_dict
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        This function will generate a dictionary with given at most `max_depth` and `max_height` of mixed types.
+        
+        .. code:: python
+        
+            from random_dict import random_dict
+            from random import randint
+        
+            random_dict(randint(1, 10), randint(1, 10))
+        
+        Some generated examples can be found within the examples folder.
+        
+        .. |travis| image:: https://travis-ci.org/LucaCappelletti94/random_dict.png
+           :target: https://travis-ci.org/LucaCappelletti94/random_dict
+        
+        .. |sonar_quality| image:: https://sonarcloud.io/api/project_badges/measure?project=LucaCappelletti94_random_dict&metric=alert_status
+            :target: https://sonarcloud.io/dashboard/index/LucaCappelletti94_random_dict
+        
+        .. |sonar_maintainability| image:: https://sonarcloud.io/api/project_badges/measure?project=LucaCappelletti94_random_dict&metric=sqale_rating
+            :target: https://sonarcloud.io/dashboard/index/LucaCappelletti94_random_dict
+        
+        .. |sonar_coverage| image:: https://sonarcloud.io/api/project_badges/measure?project=LucaCappelletti94_random_dict&metric=coverage
+            :target: https://sonarcloud.io/dashboard/index/LucaCappelletti94_random_dict
+        
+        .. |coveralls_coverage| image:: https://coveralls.io/repos/github/LucaCappelletti94/random_dict/badge.svg?branch=master
+            :target: https://coveralls.io/github/LucaCappelletti94/random_dict?branch=master
+        
+        .. |pip| image:: https://badge.fury.io/py/random_dict.svg
+            :target: https://badge.fury.io/py/random_dict
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Provides-Extra: test
