@@ -18,7 +18,65 @@ Since some software handling coverages sometime get slightly different results, 
 
 |coveralls| |sonar_coverage| |code_climate_coverage|
 
-Simple python package to generate random dictionaries of given types.
+Usage examples
+----------------------------------------------
+
+random_string_dict
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This function will generate a dictionary with given at most `max_depth` and `max_height` of type `string`.
+
+.. code:: python
+
+    from random_dict import random_string_dict
+    from random import randint
+
+    random_string_dict(randint(1, 10), randint(1, 10))
+
+random_bool_dict
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This function will generate a dictionary with given at most `max_depth` and `max_height` of type `bool`.
+
+.. code:: python
+
+    from random_dict import random_bool_dict
+    from random import randint
+
+    random_bool_dict(randint(1, 10), randint(1, 10))
+
+random_float_dict
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This function will generate a dictionary with given at most `max_depth` and `max_height` of type `float`.
+
+.. code:: python
+
+    from random_dict import random_float_dict
+    from random import randint
+
+    random_float_dict(randint(1, 10), randint(1, 10))
+
+random_int_dict
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This function will generate a dictionary with given at most `max_depth` and `max_height` of type `int`.
+
+.. code:: python
+
+    from random_dict import random_int_dict
+    from random import randint
+
+    random_int_dict(randint(1, 10), randint(1, 10))
+
+random_dict
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This function will generate a dictionary with given at most `max_depth` and `max_height` of mixed types.
+
+.. code:: python
+
+    from random_dict import random_dict
+    from random import randint
+
+    random_dict(randint(1, 10), randint(1, 10))
+
+Some generated examples can be found within the examples folder.
 
 .. |travis| image:: https://travis-ci.org/LucaCappelletti94/random_dict.png
    :target: https://travis-ci.org/LucaCappelletti94/random_dict
