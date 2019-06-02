@@ -57,8 +57,6 @@ def random_dict(max_depth:int, max_height:int, generators:Tuple[Callable]=(rando
         max_height:int, maximum height of dictionary.
         generators:Tuple[Callable], functions used to populate the dictionary.
     """
-    assert max_depth>0
-    assert max_height>0
     return {
         key_gen():random_dict(randint(1, max_depth-1), randint(1, max_height-1), generators) if max_depth>1 and max_height>1 else val_gen()
         for key_gen, val_gen in zip(_value_gen(generators, max_height), _value_gen(generators, max_height))
