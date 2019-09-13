@@ -98,12 +98,12 @@ Some generated examples can be found within the examples folder.
     :target: https://coveralls.io/github/LucaCappelletti94/random_dict?branch=master
     :alt: Coveralls Coverage
 
-.. |pip| image:: https://badge.fury.io/py/random_dict.svg
-    :target: https://badge.fury.io/py/random_dict
+.. |pip| image:: https://badge.fury.io/py/random-dict.svg
+    :target: https://badge.fury.io/py/random-dict
     :alt: Pypi project
 
-.. |downloads| image:: https://pepy.tech/badge/random_dict
-    :target: https://pepy.tech/badge/random_dict
+.. |downloads| image:: https://pepy.tech/badge/random-dict
+    :target: https://pepy.tech/badge/random-dict
     :alt: Pypi total project downloads 
 
 .. |codacy|  image:: https://api.codacy.com/project/badge/Grade/51be6aeee29e411994d34b6fc6063886
