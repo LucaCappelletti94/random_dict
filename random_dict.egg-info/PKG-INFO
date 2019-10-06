@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: random-dict
-Version: 1.0.1
+Version: 1.0.2
 Summary: Simple python package to generate random dictionaries of given types.
 Home-page: https://github.com/LucaCappelletti94/random_dict
 Author: Luca Cappelletti
@@ -106,12 +106,12 @@ Description: random_dict
             :target: https://coveralls.io/github/LucaCappelletti94/random_dict?branch=master
             :alt: Coveralls Coverage
         
-        .. |pip| image:: https://badge.fury.io/py/random_dict.svg
-            :target: https://badge.fury.io/py/random_dict
+        .. |pip| image:: https://badge.fury.io/py/random-dict.svg
+            :target: https://badge.fury.io/py/random-dict
             :alt: Pypi project
         
-        .. |downloads| image:: https://pepy.tech/badge/random_dict
-            :target: https://pepy.tech/badge/random_dict
+        .. |downloads| image:: https://pepy.tech/badge/random-dict
+            :target: https://pepy.tech/badge/random-dict
             :alt: Pypi total project downloads 
         
         .. |codacy|  image:: https://api.codacy.com/project/badge/Grade/51be6aeee29e411994d34b6fc6063886
@@ -125,6 +125,7 @@ Description: random_dict
         .. |code_climate_coverage| image:: https://api.codeclimate.com/v1/badges/a04ccb96d15d8f47d3ec/test_coverage
             :target: https://codeclimate.com/github/LucaCappelletti94/random_dict/test_coverage
             :alt: Code Climate Coverate
+        
 Platform: UNKNOWN
 Classifier: Development Status :: 3 - Alpha
 Classifier: License :: OSI Approved :: MIT License
