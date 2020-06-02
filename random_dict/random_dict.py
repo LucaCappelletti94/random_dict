@@ -1,6 +1,8 @@
-from random import randint, uniform, getrandbits, choice
+from random import randint, uniform, getrandbits, choice, shuffle
 from typing import Callable, List, Tuple, Dict
 from string import ascii_uppercase, digits
+from itertools import product
+import numpy as np
 import sys
 
 
@@ -30,6 +32,11 @@ def random_tuple() -> tuple:
     first = choice(generators)
     second = choice(generators)
     return first(), second()
+
+
+def random_numpy_array() -> np.ndarray:
+    """Return a short numpy array."""
+    return np.array(random_tuple())
 
 
 def _value_gen(sources: List[Callable], number: int) -> Callable:
@@ -69,13 +76,22 @@ def random_int_dict(max_depth: int, max_height: int) -> Dict:
     return random_dict(max_depth, max_height, (random_int,))
 
 
-def random_dict(max_depth: int, max_height: int, generators: Tuple[Callable] = (random_int, random_bool, random_float, random_string, random_tuple)) -> Dict:
+def random_dict(
+    max_depth: int,
+    max_height: int,
+    generators: Tuple[Callable] = (random_int, random_bool, random_float, random_string, random_tuple, random_numpy_array),
+    generators_combinations: int = 5
+) -> Dict:
     """Return a random dictionary with at most given max_depth and max_height.
         max_depth:int, maximum depth of dictionary.
         max_height:int, maximum height of dictionary.
         generators:Tuple[Callable], functions used to populate the dictionary.
+        generators_combinations: int = 5, functions combinations to use.
     """
+    generators_tuples = list(product(_value_gen(generators, max_height), _value_gen(generators, max_height)))
+    shuffle(generators_tuples)
     return {
         key_gen(): random_dict(randint(1, max_depth-1), randint(1, max_height-1), generators) if max_depth > 1 and max_height > 1 else val_gen()
-        for key_gen, val_gen in zip(_value_gen(generators, max_height), _value_gen(generators, max_height))
+        for key_gen, val_gen in generators_tuples[:generators_combinations]
+        if key_gen != random_numpy_array
     }
