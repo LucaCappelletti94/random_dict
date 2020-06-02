@@ -96,10 +96,17 @@ def random_dict(
     generators_combinations: int = 5
 ) -> Dict:
     """Return a random dictionary with at most given max_depth and max_height.
+
+    Parameters
+    ---------------------
         max_depth:int, maximum depth of dictionary.
         max_height:int, maximum height of dictionary.
         generators:Tuple[Callable], functions used to populate the dictionary.
         generators_combinations: int = 5, functions combinations to use.
+
+    Returns
+    ---------------------
+    Random dictionary.
     """
     generators_tuples = list(product(_value_gen(
         generators, max_height), _value_gen(generators, max_height)))
