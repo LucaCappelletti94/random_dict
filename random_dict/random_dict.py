@@ -1,8 +1,10 @@
 from random import randint, uniform, getrandbits, choice, shuffle
 from typing import Callable, List, Tuple, Dict
 from string import ascii_uppercase, digits
+from random_csv_generator import random_csv
 from itertools import product
 import numpy as np
+import pandas as pd
 import sys
 
 
@@ -32,6 +34,11 @@ def random_tuple() -> tuple:
     first = choice(generators)
     second = choice(generators)
     return first(), second()
+
+
+def random_dataframe() -> pd.DataFrame:
+    """Return a random dataframe."""
+    return random_csv(10)
 
 
 def random_numpy_array() -> np.ndarray:
@@ -79,7 +86,7 @@ def random_int_dict(max_depth: int, max_height: int) -> Dict:
 def random_dict(
     max_depth: int,
     max_height: int,
-    generators: Tuple[Callable] = (random_int, random_bool, random_float, random_string, random_tuple, random_numpy_array),
+    generators: Tuple[Callable] = (random_int, random_bool, random_float, random_string, random_tuple, random_numpy_array, random_dataframe),
     generators_combinations: int = 5
 ) -> Dict:
     """Return a random dictionary with at most given max_depth and max_height.
@@ -88,10 +95,11 @@ def random_dict(
         generators:Tuple[Callable], functions used to populate the dictionary.
         generators_combinations: int = 5, functions combinations to use.
     """
-    generators_tuples = list(product(_value_gen(generators, max_height), _value_gen(generators, max_height)))
+    generators_tuples = list(product(_value_gen(
+        generators, max_height), _value_gen(generators, max_height)))
     shuffle(generators_tuples)
     return {
         key_gen(): random_dict(randint(1, max_depth-1), randint(1, max_height-1), generators) if max_depth > 1 and max_height > 1 else val_gen()
         for key_gen, val_gen in generators_tuples[:generators_combinations]
-        if key_gen != random_numpy_array
+        if key_gen not in (random_numpy_array, random_dataframe)
     }
