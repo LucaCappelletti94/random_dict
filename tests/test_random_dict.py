@@ -1,6 +1,5 @@
 from random_dict import random_bool_dict, random_float_dict, random_int_dict, random_string_dict, random_dict
 from random import randint
-import os
 from tqdm import trange
 
 
