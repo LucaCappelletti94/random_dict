@@ -1,7 +1,6 @@
 from random import randint, uniform, getrandbits, choice, shuffle
 from typing import Callable, List, Tuple, Dict
 from string import ascii_uppercase, digits
-from random_csv_generator import random_csv
 from itertools import product
 import numpy as np
 import pandas as pd
@@ -38,7 +37,9 @@ def random_tuple() -> tuple:
 
 def random_dataframe() -> pd.DataFrame:
     """Return a random dataframe."""
-    return random_csv(10)
+    return pd.DataFrame({
+        random_string(): random_tuple(),
+    })
 
 
 def random_numpy_array() -> np.ndarray:

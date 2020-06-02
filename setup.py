@@ -58,8 +58,7 @@ setup(
     install_requires=[
         # Add here the package dependencies
         "numpy",
-        "pandas",
-        "random_csv_generator"
+        "pandas"
     ],
     extras_require=extras,
 )
