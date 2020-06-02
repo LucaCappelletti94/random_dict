@@ -27,9 +27,14 @@ def random_string() -> str:
     return ''.join(choice(ascii_uppercase + digits) for _ in range(randint(0, 1000)))
 
 
+def random_bytes() -> bytes:
+    """Return a random bytes sequence."""
+    return random_string().encode()
+
+
 def random_tuple() -> tuple:
     """Return a random tuple."""
-    generators = random_int, random_float, random_bool, random_string
+    generators = random_int, random_float, random_bool, random_string, random_bytes
     first = choice(generators)
     second = choice(generators)
     return first(), second()
@@ -87,7 +92,7 @@ def random_int_dict(max_depth: int, max_height: int) -> Dict:
 def random_dict(
     max_depth: int,
     max_height: int,
-    generators: Tuple[Callable] = (random_int, random_bool, random_float, random_string, random_tuple, random_numpy_array, random_dataframe),
+    generators: Tuple[Callable] = (random_int, random_bool, random_float, random_string, random_tuple, random_numpy_array, random_dataframe, random_bytes),
     generators_combinations: int = 5
 ) -> Dict:
     """Return a random dictionary with at most given max_depth and max_height.
