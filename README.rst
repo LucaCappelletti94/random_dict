@@ -1,6 +1,7 @@
 random_dict
 =========================================================================================
-|travis| |sonar_quality| |sonar_maintainability| |codacy| |code_climate_maintainability| |pip| |downloads|
+|travis| |sonar_quality| |sonar_maintainability| |codacy|
+|code_climate_maintainability| |pip| |downloads|
 
 Simple python package to generate random dictionaries of given types.
 
@@ -21,7 +22,7 @@ Since some software handling coverages sometime get slightly different results, 
 Usage examples
 ----------------------------------------------
 
-random_string_dict
+Generator random_string_dict
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This function will generate a dictionary with given at most `max_depth` and `max_height` of type `string`.
 
@@ -32,7 +33,7 @@ This function will generate a dictionary with given at most `max_depth` and `max
 
     random_string_dict(randint(1, 10), randint(1, 10))
 
-random_bool_dict
+Generator random_bool_dict
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This function will generate a dictionary with given at most `max_depth` and `max_height` of type `bool`.
 
@@ -43,7 +44,7 @@ This function will generate a dictionary with given at most `max_depth` and `max
 
     random_bool_dict(randint(1, 10), randint(1, 10))
 
-random_float_dict
+Generator random_float_dict
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This function will generate a dictionary with given at most `max_depth` and `max_height` of type `float`.
 
@@ -54,7 +55,7 @@ This function will generate a dictionary with given at most `max_depth` and `max
 
     random_float_dict(randint(1, 10), randint(1, 10))
 
-random_int_dict
+Generator random_int_dict
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This function will generate a dictionary with given at most `max_depth` and `max_height` of type `int`.
 
@@ -65,7 +66,7 @@ This function will generate a dictionary with given at most `max_depth` and `max
 
     random_int_dict(randint(1, 10), randint(1, 10))
 
-random_dict
+Generator random_dict
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This function will generate a dictionary with given at most `max_depth` and `max_height` of mixed types.
 
@@ -106,7 +107,7 @@ Some generated examples can be found within the examples folder.
     :target: https://pepy.tech/badge/random-dict
     :alt: Pypi total project downloads 
 
-.. |codacy|  image:: https://api.codacy.com/project/badge/Grade/51be6aeee29e411994d34b6fc6063886
+.. |codacy| image:: https://api.codacy.com/project/badge/Grade/51be6aeee29e411994d34b6fc6063886
     :target: https://www.codacy.com/app/LucaCappelletti94/random_dict?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LucaCappelletti94/random_dict&amp;utm_campaign=Badge_Grade
     :alt: Codacy Maintainability
 
