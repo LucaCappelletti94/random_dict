@@ -56,6 +56,8 @@ setup(
     tests_require=test_deps,
     install_requires=[
         # Add here the package dependencies
+        "numpy",
+        "pandas",
         "random_csv_generator"
     ],
     extras_require=extras,
