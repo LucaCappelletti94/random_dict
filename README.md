@@ -2,7 +2,7 @@
 
 [![pip](https://badge.fury.io/py/random-dict.svg)](https://badge.fury.io/py/random-dict)
 [![downloads](https://pepy.tech/badge/random-dict)](https://pepy.tech/projects/random-dict)
-[![license](https://img.shields.io/github/license/rafaeltoledo/random_dict)](LICENSE)
+[![license](https://img.shields.io/github/license/LucaCappelletti94/random_dict)](LICENSE)
 [![Python version](https://img.shields.io/pypi/pyversions/random-dict)](https://pypi.org/project/random-dict/)
 [![GitHub actions](https://github.com/LucaCappelletti94/random_dict/actions/workflows/python.yml/badge.svg)](https://github.com/LucaCappelletti94/random_dict/actions/)
 
