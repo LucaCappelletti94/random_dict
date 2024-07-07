@@ -1,8 +1,6 @@
+"""Setup for the random-dict package."""
 import os
 import re
-
-# To use a consistent encoding
-from codecs import open as copen
 from os import path
 
 from setuptools import find_packages, setup
@@ -10,12 +8,12 @@ from setuptools import find_packages, setup
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the relevant file
-with copen(path.join(here, 'README.rst'), encoding='utf-8') as f:
+with open(path.join(here, 'README.md'), encoding='utf8') as f:
     long_description = f.read()
 
 
 def read(*parts):
-    with copen(os.path.join(here, *parts), 'r') as fp:
+    with open(os.path.join(here, *parts), 'r', encoding='utf8') as fp:
         return fp.read()
 
 
@@ -42,6 +40,7 @@ setup(
     version=__version__,
     description="Simple python package to generate random dictionaries of given types.",
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url="https://github.com/LucaCappelletti94/random_dict",
     author="Luca Cappelletti",
     author_email="cappelletti.luca94@gmail.com",
@@ -49,16 +48,11 @@ setup(
     license='MIT',
     include_package_data=True,
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3'
     ],
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     tests_require=test_deps,
-    install_requires=[
-        # Add here the package dependencies
-        "numpy",
-        "pandas"
-    ],
     extras_require=extras,
 )
