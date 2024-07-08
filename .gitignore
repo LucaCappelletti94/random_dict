@@ -11,3 +11,4 @@
 htmlcov
 __pycache__
 .pytest_cache
+random_dict.egg-info
