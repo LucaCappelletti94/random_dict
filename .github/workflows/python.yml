@@ -33,9 +33,15 @@ jobs:
         pytest
         pip uninstall -y numpy
 
-    - name: Test with pandas available
+    - name: Test with pandas 1 available
       run: |
-        pip install pandas
+          pip install pandas<2.0
+          pytest
+          pip uninstall -y pandas
+    
+    - name: Test with pandas 2 available
+      run: |
+        pip install pandas>=2.0
         pytest
         pip uninstall -y pandas
 

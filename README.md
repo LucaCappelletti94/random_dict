@@ -8,7 +8,7 @@
 
 Python package to generate random dictionaries of given types.
 
-It is primarily intended for testing/fuzzing purposes, where you need to generate many random dictionaries of a given type.
+It is primarily intended for randomized testing purposes, where you need to generate many random dictionaries of a given type.
 
 ## How do I install this package?
 As usual, just download it using pip:

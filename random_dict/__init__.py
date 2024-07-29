@@ -13,7 +13,8 @@ from random_dict.random_dict import (
     random_int,
     random_bytes,
     random_string,
-    random_dataframe,
+    random_pandas_dataframe,
+    random_pandas_series,
     random_numpy_array
 )
 
@@ -28,6 +29,7 @@ __all__ = [
     "random_int",
     "random_bytes",
     "random_string",
-    "random_dataframe",
+    "random_pandas_dataframe",
+    "random_pandas_series",
     "random_numpy_array"
 ]
