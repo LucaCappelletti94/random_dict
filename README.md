@@ -20,6 +20,9 @@ pip install random_dict
 ## Usage examples
 Here are some examples of how to use this package.
 
+In all cases, you can always specify the `random_state` parameter to make the generation of the random dictionaries reproducible.
+The `random_state` parameter can be an integer or a [`random.Random`](https://docs.python.org/3/library/random.html#alternative-generator) object.
+
 ### Generator random_string_dict
 
 This function will generate a dictionary with given at most `max_depth` and `max_height` of type `string`.

@@ -35,13 +35,13 @@ jobs:
 
     - name: Test with pandas 1 available
       run: |
-          pip install pandas<2.0
+          pip install "pandas<2.0"
           pytest
           pip uninstall -y pandas
     
     - name: Test with pandas 2 available
       run: |
-        pip install pandas>=2.0
+        pip install "pandas>=2.0"
         pytest
         pip uninstall -y pandas
 
