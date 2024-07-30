@@ -14,15 +14,26 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12"]
         pandas-version: ["pandas<2.0", "pandas>=2.0"]
         numpy-version: ["numpy<2.0", "numpy>=2.0"]
         exclude:
-          # Exclude invalid combinations of pandas 2.x with Python 3.7, 3.8
           - python-version: "3.7"
             pandas-version: "pandas>=2.0"
+            numpy-version: "numpy>=2.0"
           - python-version: "3.8"
             pandas-version: "pandas>=2.0"
+            numpy-version: "numpy>=2.0"
+          - python-version: "3.9"
+            pandas-version: "pandas<2.0"
+          - python-version: "3.10"
+            pandas-version: "pandas<2.0"
+          - python-version: "3.11"
+            pandas-version: "pandas<2.0"
+            numpy-version: "numpy<2.0"
+          - python-version: "3.12"
+            pandas-version: "pandas<2.0"
+            numpy-version: "numpy<2.0"
 
     steps:
       - name: Checkout repository
