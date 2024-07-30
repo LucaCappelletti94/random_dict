@@ -28,7 +28,13 @@ def find_version(*file_paths):
 
 __version__ = find_version("random_dict", "__version__.py")
 
-test_deps = ["pytest", "pytest-cov", "pytest-readme", "validate_version_code", "setuptools"]
+test_deps = [
+    "pytest",
+    "pytest-cov",
+    "pytest-readme",
+    "validate_version_code",
+    "setuptools",
+]
 
 extras = {
     "test": test_deps,
