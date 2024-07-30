@@ -20,9 +20,11 @@ jobs:
         exclude:
           - python-version: "3.7"
             pandas-version: "pandas>=2.0"
+          - python-version: "3.7"
             numpy-version: "numpy>=2.0"
           - python-version: "3.8"
             pandas-version: "pandas>=2.0"
+          - python-version: "3.8"
             numpy-version: "numpy>=2.0"
           - python-version: "3.9"
             pandas-version: "pandas<2.0"
