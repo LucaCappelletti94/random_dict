@@ -3,6 +3,7 @@
 [![pip](https://badge.fury.io/py/random-dict.svg)](https://badge.fury.io/py/random-dict)
 [![downloads](https://pepy.tech/badge/random-dict)](https://pepy.tech/projects/random-dict)
 [![license](https://img.shields.io/github/license/LucaCappelletti94/random_dict)](LICENSE)
+[![Examples tested with pytest-readme](http://img.shields.io/badge/readme-tested-brightgreen.svg)](https://github.com/boxed/pytest-readme)
 [![Python version](https://img.shields.io/pypi/pyversions/random-dict)](https://pypi.org/project/random-dict/)
 [![GitHub actions](https://github.com/LucaCappelletti94/random_dict/actions/workflows/python.yml/badge.svg)](https://github.com/LucaCappelletti94/random_dict/actions/)
 
@@ -32,7 +33,8 @@ from random_dict import random_string_dict
 
 my_random_string_dict = random_string_dict(
     max_depth=4,
-    max_height=3
+    max_height=3,
+    random_state=42
 )
 ```
 
