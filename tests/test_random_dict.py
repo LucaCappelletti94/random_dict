@@ -66,8 +66,11 @@ def test_non_reproduceability():
             random_string_dict,
             random_dict,
         ):
-            a = g(randint(3, 15), randint(3, 15))
-            b = g(randint(3, 15), randint(3, 15))
+            first_random_state = randint(1, 100)
+            second_random_state = randint(1, 100) + first_random_state
+            assert first_random_state != second_random_state
+            a = g(randint(5, 15), randint(5, 15), random_state=first_random_state)
+            b = g(randint(5, 15), randint(5, 15), random_state=second_random_state)
             error_was_not_raised = False
             try:
                 compare_dictionaries(a, b)
