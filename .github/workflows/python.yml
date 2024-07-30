@@ -30,9 +30,11 @@ jobs:
             pandas-version: "pandas<2.0"
           - python-version: "3.11"
             pandas-version: "pandas<2.0"
-            numpy-version: "numpy<2.0"
+          - python-version: "3.11"
+            numpy-version: "numpy>=2.0"
           - python-version: "3.12"
             pandas-version: "pandas<2.0"
+          - python-version: "3.12"
             numpy-version: "numpy<2.0"
 
     steps:
