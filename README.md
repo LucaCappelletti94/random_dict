@@ -208,13 +208,17 @@ An example of a generated dictionary is:
 ### Generator random_dict
 
 This function will generate a dictionary with given at most `max_depth` and `max_height` of mixed types.
+You can specify the types of keys and values by passing the `key_generators` and `value_generators` arguments.
+By default, they are set to the string `"all"`, which means that all supported types of generators will be used.
 
 ```python
 from random_dict import random_dict
 
 my_random_dict = random_dict(
     max_depth=4,
-    max_height=3
+    max_height=3,
+    key_generators="all",
+    value_generators="all"
 )
 ```
 
@@ -270,6 +274,35 @@ An example of a generated dictionary is:
         ): -3665858169163958488
     }
 }
+```
+
+### Using custom generators
+
+Since we mentioned above that you can specify the types of keys and values by passing the `key_generators` and `value_generators` arguments, you can also pass custom generators. Here is a mixed example:
+
+```python
+from typing import List, Optional
+from random import Random
+from random_dict import random_dict, random_int, random_bool
+
+def custom_list_generator(random_state: Optional[Random] = None) -> List[int]:
+    """Return a list of 3 random integers.
+    
+    Parameters
+    ----------
+    random_state : Optional[Random]
+        The random state to use for generating random numbers.
+    """
+    if random_state is None:
+        random_state = Random()
+    return random_state.choices([1, 2, 3, 4, 5], k=3)
+
+my_random_dict = random_dict(
+    max_depth=4,
+    max_height=3,
+    key_generators=[random_int, random_bool],
+    value_generators=[random_int, random_bool, custom_list_generator]
+)
 ```
 
 More generated examples can be found within the [examples folder](examples/).

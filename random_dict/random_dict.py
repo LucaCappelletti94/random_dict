@@ -220,7 +220,8 @@ def random_string_dict(
     return random_dict(
         max_depth=max_depth,
         max_height=max_height,
-        generators=(random_string,),
+        key_generators=random_string,
+        value_generators=random_string,
         random_state=random_state,
     )
 
@@ -243,7 +244,8 @@ def random_bool_dict(
     return random_dict(
         max_depth=max_depth,
         max_height=max_height,
-        generators=(random_bool,),
+        key_generators=random_bool,
+        value_generators=random_bool,
         random_state=random_state,
     )
 
@@ -266,7 +268,8 @@ def random_float_dict(
     return random_dict(
         max_depth=max_depth,
         max_height=max_height,
-        generators=(random_float,),
+        key_generators=random_float,
+        value_generators=random_float,
         random_state=random_state,
     )
 
@@ -289,9 +292,37 @@ def random_int_dict(
     return random_dict(
         max_depth=max_depth,
         max_height=max_height,
-        generators=(random_int,),
+        key_generators=random_int,
+        value_generators=random_int,
         random_state=random_state,
     )
+
+
+def all_generators() -> List[Callable]:
+    """Return all available generators."""
+    generators = [
+        random_int,
+        random_float,
+        random_bool,
+        random_string,
+        random_bytes,
+        random_tuple,
+    ]
+    try:
+        import pandas  # pylint: disable=wrong-import-position,unused-import,import-outside-toplevel
+
+        generators.extend([random_pandas_dataframe, random_pandas_series])
+    except ImportError:
+        pass
+
+    try:
+        import numpy  # pylint: disable=wrong-import-position,unused-import,import-outside-toplevel
+
+        generators.append(random_numpy_array)
+    except ImportError:
+        pass
+
+    return generators
 
 
 def random_dict(
@@ -327,44 +358,31 @@ def random_dict(
     if isinstance(random_state, int):
         random_state = Random(random_state)
 
-    if generators == "all":
-        generators = [
-            random_int,
-            random_float,
-            random_bool,
-            random_string,
-            random_bytes,
-            random_tuple,
+    if isinstance(key_generators, Callable):
+        key_generators = (key_generators,)
+
+    if isinstance(value_generators, Callable):
+        value_generators = (value_generators,)
+
+    if key_generators == "all":
+        key_generators = [
+            generator
+            for generator in all_generators()
+            if generator
+            not in (
+                random_pandas_dataframe,
+                random_numpy_array,
+                random_pandas_series,
+            )
         ]
-        try:
-            import pandas  # pylint: disable=wrong-import-position,unused-import,import-outside-toplevel
 
-            generators.extend([random_pandas_dataframe, random_pandas_series])
-        except ImportError:
-            pass
-
-        try:
-            import numpy  # pylint: disable=wrong-import-position,unused-import,import-outside-toplevel
-
-            generators.append(random_numpy_array)
-        except ImportError:
-            pass
-
-    key_generators = [
-        generator
-        for generator in generators
-        if generator
-        not in (
-            random_pandas_dataframe,
-            random_numpy_array,
-            random_pandas_series,
-        )
-    ]
+    if value_generators == "all":
+        value_generators = all_generators()
 
     generators_tuples = list(
         product(
             _value_gen(key_generators, max_height, random_state=random_state),
-            _value_gen(generators, max_height, random_state=random_state),
+            _value_gen(value_generators, max_height, random_state=random_state),
         )
     )
 
@@ -386,7 +404,8 @@ def random_dict(
                     if random_state is None
                     else random_state.randint(1, max_height - 1)
                 ),
-                generators=generators,
+                key_generators=key_generators,
+                value_generators=value_generators,
                 random_state=random_state,
             )
             if max_depth > 1 and max_height > 1
