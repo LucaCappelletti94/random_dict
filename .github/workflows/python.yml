@@ -49,7 +49,7 @@ jobs:
 
       - name: Install extra dependencies
         run: |
-          pip install ${{ matrix.pandas-version }} ${{ matrix.numpy-version }}
+          pip install "${{ matrix.pandas-version }}" "${{ matrix.numpy-version }}"
 
       - name: Rerun tests with extra dependencies
         run: |

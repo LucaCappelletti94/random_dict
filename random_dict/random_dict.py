@@ -297,7 +297,8 @@ def random_int_dict(
 def random_dict(
     max_depth: int,
     max_height: int,
-    generators: Union[str, Tuple[Callable]] = "all",
+    key_generators: Union[str, Tuple[Callable]] = "all",
+    value_generators: Union[str, Tuple[Callable]] = "all",
     generators_combinations: int = 5,
     random_state: Optional[Union[Random, int]] = None,
 ) -> Dict[Any, Any]:
@@ -309,8 +310,10 @@ def random_dict(
         Maximum depth of dictionary.
     max_height: int,
         Maximum height of dictionary.
-    generators: Tuple[Callable],
-        Functions used to populate the dictionary.
+    key_generators: Tuple[Callable],
+        Functions used to populate the dictionary keys.
+    value_generators: Tuple[Callable],
+        Functions used to populate the dictionary values.
     generators_combinations: int = 5,
         Functions combinations to use.
     random_state: Optional[Union[Random, int]] = None,
