@@ -28,7 +28,7 @@ def find_version(*file_paths):
 
 __version__ = find_version("random_dict", "__version__.py")
 
-test_deps = ["pytest", "pytest-cov", "pytest-readme", "validate_version_code"]
+test_deps = ["pytest", "pytest-cov", "pytest-readme", "validate_version_code", "setuptools"]
 
 extras = {
     "test": test_deps,
@@ -37,7 +37,7 @@ extras = {
 setup(
     name="random_dict",
     version=__version__,
-    description="Simple python package to generate random dictionaries of given types.",
+    description="Python package to generate random dictionaries of given types.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/LucaCappelletti94/random_dict",
